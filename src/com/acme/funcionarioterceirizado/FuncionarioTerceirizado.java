@@ -1,20 +1,19 @@
-package com.acme;
+package com.acme.funcionarioterceirizado;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
-import java.util.List;
 
+import com.acme.EmpresaContratada;
 import com.acme.enums.Cargo;
-import com.acme.enums.Setor;
+import com.acme.funcionario.Funcionario;
 
 public class FuncionarioTerceirizado extends Funcionario {
 	
 	private EmpresaContratada empresaContratada;
 	private LocalDate previsaoPermanencia;
 
-	public FuncionarioTerceirizado(String nome, List<Telefone> telefones, Endereco endereco, BigDecimal salario,
-			Setor setor, Cargo cargo, EmpresaContratada empresaContratada, LocalDate previsaoPermanencia) {
-		super(nome, telefones, endereco, salario, setor, cargo);
+	public FuncionarioTerceirizado(String nome, BigDecimal salario, Cargo cargo, EmpresaContratada empresaContratada, LocalDate previsaoPermanencia) {
+		super(nome, salario, cargo);
 		this.empresaContratada = empresaContratada;
 		this.previsaoPermanencia = previsaoPermanencia;
 	}

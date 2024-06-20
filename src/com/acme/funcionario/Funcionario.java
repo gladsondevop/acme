@@ -1,8 +1,10 @@
-package com.acme;
+package com.acme.funcionario;
 
 import java.math.BigDecimal;
 import java.util.List;
 
+import com.acme.Endereco;
+import com.acme.Telefone;
 import com.acme.enums.Cargo;
 import com.acme.enums.Setor;
 
@@ -15,14 +17,10 @@ public abstract class Funcionario {
 	private Setor setor;
 	private Cargo cargo;
 	
-	public Funcionario(String nome, List<Telefone> telefones, Endereco endereco, BigDecimal salario, Setor setor,
-			Cargo cargo) {
+	public Funcionario(String nome, BigDecimal salario, Cargo cargo) {
 		super();
 		this.nome = nome;
-		this.telefones = telefones;
-		this.endereco = endereco;
 		this.salario = salario;
-		this.setor = setor;
 		this.cargo = cargo;
 	}
 
@@ -50,7 +48,7 @@ public abstract class Funcionario {
 		return salario;
 	}
 
-	public void setSalario(BigDecimal salario) {
+	protected void setSalario(BigDecimal salario) {
 		this.salario = salario;
 	}
 
@@ -65,10 +63,5 @@ public abstract class Funcionario {
 	public Cargo getCargo() {
 		return cargo;
 	}
-
-	public void setCargo(Cargo cargo) {
-		this.cargo = cargo;
-	}
-
 
 }

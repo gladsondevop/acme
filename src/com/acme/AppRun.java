@@ -7,43 +7,45 @@ import java.util.List;
 
 import com.acme.enums.Cargo;
 import com.acme.enums.Setor;
+import com.acme.funcionario.FuncionarioContratado;
+import com.acme.funcionarioterceirizado.FuncionarioTerceirizado;
 
 public class AppRun {
 	
 	public static void main(String[] args) {
-		
-		FuncionarioContratado funcionarioContratado = 
+		criarFuncionarioContratado();
+		criarFuncionarioTerceirizado();
+	}
+
+	private static void criarFuncionarioContratado() {
+		FuncionarioContratado funcionario = 
 				new FuncionarioContratado(
 						"Gladson Cunha de Albuquerque", 
-						getTelefones(), 
-						getEndereco(), 
 						new BigDecimal(1000), 
-						Setor.DESENVOLVIMENTO, 
 						Cargo.SÊNIOR);
 		
-		System.out.println("Funcionário Contratado: \n");
-		System.out.println("Nome: " + funcionarioContratado.getNome());
-		System.out.println(funcionarioContratado.getEndereco().toString());
-		System.out.println(funcionarioContratado.getTelefones());
-		System.out.println("Setor: " + funcionarioContratado.getSetor());
-		System.out.println("Cargo: " + funcionarioContratado.getCargo());
-		System.out.println("Salário sem reajuste: " + funcionarioContratado.getSalario());
-		//Reajuste Salarial
-		funcionarioContratado.aplicarReajusteSalarial(10.0);
-		System.out.println("Salário com reajuste: " + funcionarioContratado.getSalario());
+		funcionario.setEndereco(getEndereco());
+		funcionario.setSetor(Setor.DESENVOLVIMENTO);
+		funcionario.setTelefones(getTelefones());
 		
-		
-		
-		FuncionarioTerceirizado funcionarioTerceirizado = 
-				new FuncionarioTerceirizado(
-						"João Terceiro Terceirizado", 
-						getTelefones(), 
-						getEndereco(), 
+		System.out.println(funcionario.toString());
+		System.out.println("\tSalário sem reajuste: " + funcionario.getSalario());
+		funcionario.aplicarReajusteSalarial(10.0);
+		System.out.println("\tSalário com reajuste: " + funcionario.getSalario());
+	}
+	
+	private static void criarFuncionarioTerceirizado() {
+		FuncionarioTerceirizado funcionario = 
+				new FuncionarioTerceirizado("João Terceiro Terceirizado", 
 						new BigDecimal(2000), 
-						Setor.BANCO_DE_DADOS, 
 						Cargo.SÊNIOR, 
 						getEmpresaContratada(), 
 						getPrevisaoPermanencia());
+		
+		funcionario.setEndereco(getEndereco());
+		funcionario.setSetor(Setor.DESENVOLVIMENTO);
+		funcionario.setTelefones(getTelefones());
+		System.out.println("\n"+funcionario.toString());
 	}
 
 	private static LocalDate getPrevisaoPermanencia() {
