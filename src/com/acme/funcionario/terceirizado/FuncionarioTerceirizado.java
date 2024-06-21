@@ -1,11 +1,11 @@
-package com.acme.funcionarioterceirizado;
+package com.acme.funcionario.terceirizado;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
 
 import com.acme.EmpresaContratada;
 import com.acme.enums.Cargo;
-import com.acme.funcionario.Funcionario;
+import com.acme.funcionario.contratado.Funcionario;
 
 public class FuncionarioTerceirizado extends Funcionario {
 	

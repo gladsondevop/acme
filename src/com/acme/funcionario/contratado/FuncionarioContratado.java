@@ -1,4 +1,4 @@
-package com.acme.funcionario;
+package com.acme.funcionario.contratado;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;

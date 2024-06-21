@@ -7,8 +7,8 @@ import java.util.List;
 
 import com.acme.enums.Cargo;
 import com.acme.enums.Setor;
-import com.acme.funcionario.FuncionarioContratado;
-import com.acme.funcionarioterceirizado.FuncionarioTerceirizado;
+import com.acme.funcionario.contratado.FuncionarioContratado;
+import com.acme.funcionario.terceirizado.FuncionarioTerceirizado;
 
 public class AppRun {
 	
